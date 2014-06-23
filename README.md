@@ -3,24 +3,29 @@ easyflot
 
 Utilitários desenvolvidos em cima da biblioteca FlotCharts <http://www.flotcharts.org/>
 
-Os gráficos podem ser criados com listas de valores separados da seguinte forma:
+Um novo gráfico é criado a partir da EasyFlot da seguinte forma:
 
-var ef = new EasyFlot([1,2,3,4,5], [1,2,3,2,1], "#placeholder");
+ef = new EasyFlot("#placeholder", {});
+
+Opções relacionadas ao gráfico, como as da grid podem ser passadas nesse comando:
+
+ef = new EasyFlot("#placeholder", {grid: {backgroundColor: color/gradient or null});
+
+Novas séries podem ser adicionadas através do método addplot. 
+Os gráficos podem ser criados com listas de valores separados:
+
+ef.addplot([1,2,3,4,5], [1,2,3,2,1], {});
 
 Também é possível fornecer apenas os valores do eixo Y:
 
-var ef = new EasyFlot(null, [1,2,3,2,1], "#placeholder");
+ef.addplot(null, [1,2,3,2,1], {});
 
-Ou com o pares de pontos:
+Ou pares de pontos:
 
-var ef = new EasyFlot( [(1,1),(2,2),(3,3),(4,2),(5,1)], null, "#placeholder");
+ef.addplot([(1,1),(2,2),(3,3),(4,2),(5,1)], null, {});
 
-Novas séries podem ser adicionadas através do método addplot:
+Opções relacionadas às séries podem ser especificadas nesse comando:
 
-ef.addplot([1,2,3,4,5], [2,1,3,4,1]);
-
-Opções do gráfico podem ser especificadas por parametros nomeados na criação do gráfico:
-
-var ef = new EasyFlot([1,2,3,4,5], [1,2,3,2,1], "#placeholder", {});
+var ef = new EasyFlot([1,2,3,4,5], [1,2,3,2,1], {symbol: "^"});
 
 
